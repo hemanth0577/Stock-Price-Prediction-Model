@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>STOCK STATUS AND PRICE PREDICTION</h1>
+
+        <form action="/predict" method="post" class="form-box">
+            <input type="text" name="stock" placeholder="Enter Stock Name (e.g. AAPL)" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <h2>Stock: {{ stock }}</h2>
+            <h2 class="prediction">Prediction: {{ result }}</h2>
+        </div>
+        {% endif %}
+
+        <!-- ✅ FAANG Section INSIDE BODY -->
+        <div class="faang-section">
+            <h3>Top Tech Stocks</h3>
+
+            <div class="faang-logos">
+
+                <div class="logo-card">
+                    <img src="https://logo.clearbit.com/facebook.com" alt="Meta">
+                    <p>Meta</p>
+                </div>
+
+                <div class="logo-card">
+                    <img src="https://logo.clearbit.com/apple.com" alt="Apple">
+                    <p>Apple</p>
+                </div>
+
+                <div class="logo-card">
+                    <img src="https://logo.clearbit.com/amazon.com" alt="Amazon">
+                    <p>Amazon</p>
+                </div>
+
+                <div class="logo-card">
+                    <img src="https://logo.clearbit.com/netflix.com" alt="Netflix">
+                    <p>Netflix</p>
+                </div>
+
+                <div class="logo-card">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google">
+                    <p>Google</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
